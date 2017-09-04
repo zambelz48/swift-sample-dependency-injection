@@ -16,7 +16,12 @@ final class UserDetailFlowController: FlowController {
 	enum Screen {
 		case userDetailPage
 	}
+	
 	var navigationController: UINavigationController
+	
+	// MARK: Dependencies
+	
+	var userDetailViewController: UserDetailViewController?
 	
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
@@ -42,11 +47,9 @@ final class UserDetailFlowController: FlowController {
 	
 	private func createUserDetailViewController() -> UIViewController {
 		
-		let userDefaults = UserDefaults.standard
-		let userStorage = UserStorageProvider(userDefaults: userDefaults)
-		let userModel = UserModel(userStorageProvider: userStorage)
-		let userDetailViewModel = UserDetailViewModel(userModel: userModel)
-		let userDetailViewController = UserDetailViewController(viewModel: userDetailViewModel)
+		guard let userDetailViewController = self.userDetailViewController else {
+			return UIViewController()
+		}
 		
 		userDetailViewController.onNavigationEvent = { [weak self] (event: UserDetailViewController.NavigationEvent) in
 			

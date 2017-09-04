@@ -11,34 +11,20 @@ import UIKit
 
 final class RootFlowController {
 	
-	// MARK: Private properties
-	
-	private var userModel: UserModel?
-	private var loginFlowController: LoginFlowController?
-	private var mainFlowController: MainFlowController?
-	
-	// MARK: Public properties
+	// MARK: Dependencies
 	
 	var navigationController: UINavigationController
+	var userModel: UserModel?
+	var loginFlowController: LoginFlowController?
+	var mainFlowController: MainFlowController?
 	
 	init(navigationController: UINavigationController) {
-		
 		self.navigationController = navigationController
-		
-		configureUserModel()
-		configureInitialScreen()
 	}
 	
-	// MARK: Private methods
+	// MARK: Public methods
 	
-	private func configureUserModel() {
-		
-		let userDefaults = UserDefaults.standard
-		let userStorage = UserStorageProvider(userDefaults: userDefaults)
-		userModel = UserModel(userStorageProvider: userStorage)
-	}
-	
-	private func configureInitialScreen() {
+	func configureInitialScreen() {
 		
 		guard userModel?.isAlreadyLoggedIn == true else {
 			configureLoginFlowController()
@@ -48,15 +34,13 @@ final class RootFlowController {
 		configureMainFlowController()
 	}
 	
+	// MARK: Private methods
+	
 	private func configureLoginFlowController() {
-		
-		loginFlowController = LoginFlowController(navigationController: navigationController)
 		loginFlowController?.setInitialScreen()
 	}
 	
 	private func configureMainFlowController() {
-		
-		mainFlowController = MainFlowController(navigationController: navigationController)
 		mainFlowController?.setInitialScreen()
 	}
 	

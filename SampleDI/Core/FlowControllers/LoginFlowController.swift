@@ -16,11 +16,13 @@ final class LoginFlowController: FlowController {
 	enum Screen {
 		case loginPage
 	}
+	
 	var navigationController: UINavigationController
 	
-	// MARK: Private properties
+	// MARK: Dependencies
 	
-	private var mainFlowController: MainFlowController?
+	var mainFlowController: MainFlowController?
+	var loginViewController: LoginViewController?
 	
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
@@ -46,12 +48,9 @@ final class LoginFlowController: FlowController {
 	
 	private func createLoginViewController() -> UIViewController {
 		
-		let userDefaults = UserDefaults.standard
-		let userStorage = UserStorageProvider(userDefaults: userDefaults)
-		let userModel = UserModel(userStorageProvider: userStorage)
-		let userService = UserService()
-		let loginViewModel = LoginViewModel(userService: userService, userModel: userModel)
-		let loginViewController = LoginViewController(viewModel: loginViewModel)
+		guard let loginViewController = self.loginViewController else {
+			return UIViewController()
+		}
 		
 		loginViewController.onNavigationEvent = { [weak self] (event: LoginViewController.NavigationEvent) in
 			
@@ -67,8 +66,6 @@ final class LoginFlowController: FlowController {
 	}
 	
 	private func configureMainFlowController() {
-		
-		mainFlowController = MainFlowController(navigationController: navigationController)
 		mainFlowController?.setInitialScreen(animated: true)
 	}
 	

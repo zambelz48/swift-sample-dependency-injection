@@ -50,6 +50,7 @@
 		B88CCA301F42C11800EACAB3 /* UserStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88CCA2F1F42C11800EACAB3 /* UserStorageMock.swift */; };
 		B8AD9AD51F4351DF00DE4A8C /* UserServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD9AD41F4351DF00DE4A8C /* UserServiceMock.swift */; };
 		B8AD9AD71F43520200DE4A8C /* UserModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD9AD61F43520200DE4A8C /* UserModelMock.swift */; };
+		B8B0E98C1F5DA28200E42446 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B0E98B1F5DA28200E42446 /* Swinject.framework */; };
 		B8CF8C511F45A6AA0054D2F8 /* LocationGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CF8C4D1F45A6AA0054D2F8 /* LocationGeo.swift */; };
 		B8CF8C521F45A6AA0054D2F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CF8C4E1F45A6AA0054D2F8 /* User.swift */; };
 		B8CF8C531F45A6AA0054D2F8 /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CF8C4F1F45A6AA0054D2F8 /* UserAddress.swift */; };
@@ -120,6 +121,7 @@
 		B88CCA2F1F42C11800EACAB3 /* UserStorageMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStorageMock.swift; path = MockObjects/UserStorageMock.swift; sourceTree = "<group>"; };
 		B8AD9AD41F4351DF00DE4A8C /* UserServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserServiceMock.swift; path = MockObjects/UserServiceMock.swift; sourceTree = "<group>"; };
 		B8AD9AD61F43520200DE4A8C /* UserModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModelMock.swift; path = MockObjects/UserModelMock.swift; sourceTree = "<group>"; };
+		B8B0E98B1F5DA28200E42446 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		B8CF8C4D1F45A6AA0054D2F8 /* LocationGeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationGeo.swift; path = Core/Entities/LocationGeo.swift; sourceTree = "<group>"; };
 		B8CF8C4E1F45A6AA0054D2F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Core/Entities/User.swift; sourceTree = "<group>"; };
 		B8CF8C4F1F45A6AA0054D2F8 /* UserAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAddress.swift; path = Core/Entities/UserAddress.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B0E98C1F5DA28200E42446 /* Swinject.framework in Frameworks */,
 				B8504C191F24257900F6464D /* Alamofire.framework in Frameworks */,
 				B8504C1A1F24257900F6464D /* EVReflection.framework in Frameworks */,
 				B8504C1B1F24257900F6464D /* RxBlocking.framework in Frameworks */,
@@ -365,6 +368,7 @@
 		B8504C121F24257900F6464D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8B0E98B1F5DA28200E42446 /* Swinject.framework */,
 				B8504C131F24257900F6464D /* Alamofire.framework */,
 				B8504C141F24257900F6464D /* EVReflection.framework */,
 				B8504C151F24257900F6464D /* RxBlocking.framework */,
@@ -604,6 +608,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
 			);
 			name = "Carthage Run Script";
 			outputPaths = (

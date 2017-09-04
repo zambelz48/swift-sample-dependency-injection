@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" "4.4.0"
 github "ReactiveX/RxSwift" "3.4.1"
 github "evermeer/EVReflection" "4.9.1"
-github "EVReflection/Alamofire" "4.16.4"
+github "Swinject/Swinject" "2.1.1"

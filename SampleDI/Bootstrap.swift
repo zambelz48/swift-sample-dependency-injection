@@ -29,7 +29,7 @@ final class Bootstrap {
 		
 		configureNavigationBarStyle()
 		
-		window.rootViewController = configureRootViewController()
+		window.rootViewController = rootViewController()
 		window.makeKeyAndVisible()
 	}
 	
@@ -50,7 +50,7 @@ final class Bootstrap {
 			.configure(with: style)
 	}
 	
-	private func configureRootViewController() -> UIViewController {
+	private func rootViewController() -> UIViewController {
 		
 		rootFlowController = RootFlowController(navigationController: navigationController)
 		

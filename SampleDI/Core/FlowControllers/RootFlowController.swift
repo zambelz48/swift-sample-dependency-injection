@@ -14,7 +14,7 @@ final class RootFlowController {
 	// MARK: Dependencies
 	
 	var navigationController: UINavigationController
-	var userModel: UserModel?
+	var userModel: UserModelProtocol?
 	var loginFlowController: LoginFlowController?
 	var mainFlowController: MainFlowController?
 	

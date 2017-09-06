@@ -21,7 +21,7 @@ final class MainFlowController: FlowController {
 	
 	// MARK: Dependencies
 	
-	var userModel: UserModel?
+	var userModel: UserModelProtocol?
 	var loginFlowController: LoginFlowController?
 	var userDetailFlowController: UserDetailFlowController?
 	var mainViewController: MainViewController?

@@ -57,8 +57,8 @@ final class AppContainerRegistrationFactory {
 		
 		container.register(LoginViewModel?.self) { resolver in
 		
-			guard let userService = resolver.resolve(UserService.self),
-				let userModel = resolver.resolve(UserModel?.self),
+			guard let userService = resolver.resolve(UserServiceProtocol.self),
+				let userModel = resolver.resolve(UserModelProtocol?.self),
 				let validUserModel = userModel else {
 					return nil
 			}
@@ -71,7 +71,7 @@ final class AppContainerRegistrationFactory {
 		
 		container.register(UserDetailViewModel?.self) { resolver in
 			
-			guard let userModel = resolver.resolve(UserModel?.self),
+			guard let userModel = resolver.resolve(UserModelProtocol?.self),
 				let validUserModel = userModel else {
 					return nil
 			}

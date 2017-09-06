@@ -35,7 +35,7 @@ final class CoreContainerRegistrationFactory {
 	
 	private func utilitiesRegistration(container: Container) {
 		
-		container.register(UserStorageProvider.self) { resolver in
+		container.register(StorageProvider.self) { resolver in
 			
 			let userDefaults = UserDefaults.standard
 			let userStorage = UserStorageProvider(userDefaults: userDefaults)
@@ -47,16 +47,16 @@ final class CoreContainerRegistrationFactory {
 	
 	private func servicesRegistration(container: Container) {
 		
-		container.register(UserService.self) { _ in
+		container.register(UserServiceProtocol.self) { _ in
 			return UserService()
 		}
 	}
 	
 	private func modelsRegistration(container: Container) {
 		
-		container.register(UserModel?.self) { resolver in
+		container.register(UserModelProtocol?.self) { resolver in
 			
-			guard let userStorage = resolver.resolve(UserStorageProvider.self) else {
+			guard let userStorage = resolver.resolve(StorageProvider.self) else {
 				return nil
 			}
 			
@@ -78,7 +78,7 @@ final class CoreContainerRegistrationFactory {
 			}
 			.initCompleted { (resolver: Resolver, flowController: RootFlowController?) in
 				
-				guard let userModel = resolver.resolve(UserModel?.self),
+				guard let userModel = resolver.resolve(UserModelProtocol?.self),
 					let loginFlowController = resolver.resolve(LoginFlowController?.self),
 					let mainFlowController = resolver.resolve(MainFlowController?.self) else {
 						
@@ -121,7 +121,7 @@ final class CoreContainerRegistrationFactory {
 			}
 			.initCompleted { (resolver: Resolver, flowController: MainFlowController?) in
 				
-				guard let userModel = resolver.resolve(UserModel?.self),
+				guard let userModel = resolver.resolve(UserModelProtocol?.self),
 					let loginFlowController = resolver.resolve(LoginFlowController?.self),
 					let userDetailFlowController = resolver.resolve(UserDetailFlowController?.self),
 					let mainViewController = resolver.resolve(MainViewController?.self) else {

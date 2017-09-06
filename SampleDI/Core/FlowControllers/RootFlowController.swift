@@ -13,7 +13,7 @@ final class RootFlowController {
 	
 	// MARK: Private properties
 	
-	private var userModel: UserModel?
+	private var userModel: UserModelProtocol?
 	private var loginFlowController: LoginFlowController?
 	private var mainFlowController: MainFlowController?
 	

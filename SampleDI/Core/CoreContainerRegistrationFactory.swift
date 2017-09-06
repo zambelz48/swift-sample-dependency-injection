@@ -76,7 +76,7 @@ final class CoreContainerRegistrationFactory {
 				return RootFlowController(navigationController: mainNavigationController)
 				
 			}
-			.initCompleted { (resolver: Resolver, flowController: RootFlowController?) in
+			.initCompleted { (resolver: Resolver, rootFlowController: RootFlowController?) in
 				
 				guard let userModel = resolver.resolve(UserModelProtocol?.self),
 					let loginFlowController = resolver.resolve(LoginFlowController?.self),
@@ -85,9 +85,9 @@ final class CoreContainerRegistrationFactory {
 						return
 				}
 				
-				flowController?.userModel = userModel
-				flowController?.loginFlowController = loginFlowController
-				flowController?.mainFlowController = mainFlowController
+				rootFlowController?.userModel = userModel
+				rootFlowController?.loginFlowController = loginFlowController
+				rootFlowController?.mainFlowController = mainFlowController
 		}
 		
 		container
@@ -99,15 +99,15 @@ final class CoreContainerRegistrationFactory {
 				
 				return LoginFlowController(navigationController: mainNavigationController)
 			}
-			.initCompleted { (resolver: Resolver, flowController: LoginFlowController?) in
+			.initCompleted { (resolver: Resolver, loginFlowController: LoginFlowController?) in
 				
 				guard let mainFlowController = resolver.resolve(MainFlowController?.self),
 					let loginViewController = resolver.resolve(LoginViewController?.self) else {
 						return
 				}
 				
-				flowController?.mainFlowController = mainFlowController
-				flowController?.loginViewController = loginViewController
+				loginFlowController?.mainFlowController = mainFlowController
+				loginFlowController?.loginViewController = loginViewController
 		}
 		
 		container
@@ -119,7 +119,7 @@ final class CoreContainerRegistrationFactory {
 				
 				return MainFlowController(navigationController: mainNavigationController)
 			}
-			.initCompleted { (resolver: Resolver, flowController: MainFlowController?) in
+			.initCompleted { (resolver: Resolver, mainFlowController: MainFlowController?) in
 				
 				guard let userModel = resolver.resolve(UserModelProtocol?.self),
 					let loginFlowController = resolver.resolve(LoginFlowController?.self),
@@ -129,10 +129,10 @@ final class CoreContainerRegistrationFactory {
 						return
 				}
 				
-				flowController?.userModel = userModel
-				flowController?.loginFlowController = loginFlowController
-				flowController?.userDetailFlowController = userDetailFlowController
-				flowController?.mainViewController = mainViewController
+				mainFlowController?.userModel = userModel
+				mainFlowController?.loginFlowController = loginFlowController
+				mainFlowController?.userDetailFlowController = userDetailFlowController
+				mainFlowController?.mainViewController = mainViewController
 		}
 		
 		container
@@ -144,13 +144,13 @@ final class CoreContainerRegistrationFactory {
 				
 				return UserDetailFlowController(navigationController: mainNavigationController)
 			}
-			.initCompleted { (resolver: Resolver, flowController: UserDetailFlowController?) in
+			.initCompleted { (resolver: Resolver, userDetailFlowController: UserDetailFlowController?) in
 				
 				guard let userDetailViewController = resolver.resolve(UserDetailViewController?.self) else {
 					return
 				}
 				
-				flowController?.userDetailViewController = userDetailViewController
+				userDetailFlowController?.userDetailViewController = userDetailViewController
 		}
 	}
 	

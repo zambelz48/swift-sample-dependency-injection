@@ -76,9 +76,7 @@ final class AppContainerRegistrationFactory {
 					return nil
 			}
 			
-			let viewModel = UserDetailViewModel(userModel: validUserModel)
-			
-			return viewModel
+			return UserDetailViewModel(userModel: validUserModel)
 		}
 	}
 	

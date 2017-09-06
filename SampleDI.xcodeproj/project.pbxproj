@@ -35,8 +35,8 @@
 		B8504C1C1F24257900F6464D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8504C161F24257900F6464D /* RxCocoa.framework */; };
 		B8504C1D1F24257900F6464D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8504C171F24257900F6464D /* RxSwift.framework */; };
 		B8504C541F24B56400F6464D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8504C531F24B56400F6464D /* FlowController.swift */; };
+		B863CFA81F6052D900C9724E /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B863CFA71F6052D900C9724E /* Bootstrap.swift */; };
 		B8795A5F1F3D8125003EEE32 /* UserStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8795A5E1F3D8125003EEE32 /* UserStorageProvider.swift */; };
-		B8795A661F3D9ECC003EEE32 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8795A651F3D9ECC003EEE32 /* Bootstrap.swift */; };
 		B8795A691F3DA01F003EEE32 /* RootFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8795A681F3DA01F003EEE32 /* RootFlowController.swift */; };
 		B8795A6B1F3DA05A003EEE32 /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8795A6A1F3DA05A003EEE32 /* LoginFlowController.swift */; };
 		B8795A6D1F3DA06F003EEE32 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8795A6C1F3DA06F003EEE32 /* MainFlowController.swift */; };
@@ -111,8 +111,8 @@
 		B8504C171F24257900F6464D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B8504C181F24257900F6464D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		B8504C531F24B56400F6464D /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowController.swift; path = Core/Reusables/FlowController.swift; sourceTree = "<group>"; };
+		B863CFA71F6052D900C9724E /* Bootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
 		B8795A5E1F3D8125003EEE32 /* UserStorageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStorageProvider.swift; path = Core/Utilities/UserStorageProvider.swift; sourceTree = "<group>"; };
-		B8795A651F3D9ECC003EEE32 /* Bootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bootstrap.swift; path = Core/Bootstrap.swift; sourceTree = "<group>"; };
 		B8795A681F3DA01F003EEE32 /* RootFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootFlowController.swift; path = Core/FlowControllers/RootFlowController.swift; sourceTree = "<group>"; };
 		B8795A6A1F3DA05A003EEE32 /* LoginFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginFlowController.swift; path = Core/FlowControllers/LoginFlowController.swift; sourceTree = "<group>"; };
 		B8795A6C1F3DA06F003EEE32 /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainFlowController.swift; path = Core/FlowControllers/MainFlowController.swift; sourceTree = "<group>"; };
@@ -312,6 +312,7 @@
 				B8504C0E1F24207500F6464D /* Core */,
 				B8504C0F1F24207D00F6464D /* App */,
 				B8504BD81F241EE200F6464D /* AppDelegate.swift */,
+				B863CFA71F6052D900C9724E /* Bootstrap.swift */,
 				B8504BDF1F241EE200F6464D /* Assets.xcassets */,
 				B8504BE11F241EE200F6464D /* LaunchScreen.storyboard */,
 				B8504BE41F241EE200F6464D /* Info.plist */,
@@ -339,7 +340,6 @@
 				B8CF8C491F45A37D0054D2F8 /* Services */,
 				B8504C4B1F24AD3B00F6464D /* Reusables */,
 				B8504C111F2420A300F6464D /* Utilities */,
-				B8795A651F3D9ECC003EEE32 /* Bootstrap.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -656,7 +656,6 @@
 				B8795A6D1F3DA06F003EEE32 /* MainFlowController.swift in Sources */,
 				B83BBBDC1F59634E006FC282 /* NavigationBarConfiguration.swift in Sources */,
 				B8CF8C511F45A6AA0054D2F8 /* LocationGeo.swift in Sources */,
-				B8795A661F3D9ECC003EEE32 /* Bootstrap.swift in Sources */,
 				B8504C541F24B56400F6464D /* FlowController.swift in Sources */,
 				B8CF8C6E1F45A7610054D2F8 /* UserDetailViewController.swift in Sources */,
 				B8795A6F1F3DAEC1003EEE32 /* UserDetailFlowController.swift in Sources */,
@@ -671,6 +670,7 @@
 				B83BBBD61F59634E006FC282 /* NavigationBarImageItem.swift in Sources */,
 				B8795A6B1F3DA05A003EEE32 /* LoginFlowController.swift in Sources */,
 				B8795A691F3DA01F003EEE32 /* RootFlowController.swift in Sources */,
+				B863CFA81F6052D900C9724E /* Bootstrap.swift in Sources */,
 				B8504BD91F241EE200F6464D /* AppDelegate.swift in Sources */,
 				B83BBBDB1F59634E006FC282 /* NavigationBarViewTitle.swift in Sources */,
 				B8CF8C751F45A7AF0054D2F8 /* UserServiceProtocol.swift in Sources */,
